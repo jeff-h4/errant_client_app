@@ -37,6 +37,8 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        console.log('======================================');
+        console.log('Starting receivedEvent()');
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -44,8 +46,11 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
-        React.render(<Box />, document.getElementById("reacttesting"));
+        //React.render(<Box />, document.getElementById("reacttesting"));
+        //var myBox = new Box({});
+        //React.render(myBox,document.getElementById("reacttesting"));
+        React.render(React.createElement(Box, null),document.getElementById("reacttesting"));
         console.log('Received Event: ' + id);
+        console.log('Leaving receivedEvent()');
     }
 };
