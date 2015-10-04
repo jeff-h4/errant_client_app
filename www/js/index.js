@@ -33,12 +33,14 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        //app.receivedEvent('deviceready');
+        app.startErrant('deviceready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         console.log('======================================');
         console.log('Starting receivedEvent()');
+        console.log("I'm not supposed to be in receivedEvent");
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -46,11 +48,17 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-        //React.render(<Box />, document.getElementById("reacttesting"));
-        //var myBox = new Box({});
-        //React.render(myBox,document.getElementById("reacttesting"));
         React.render(React.createElement(Box, null),document.getElementById("reacttesting"));
         console.log('Received Event: ' + id);
         console.log('Leaving receivedEvent()');
+    },
+    startErrant: function(id) {
+        var WEB_SERVER_BASE = "http://dff6bb78.ngrok.io"; 
+        console.log('======================================');
+        console.log('Entering startErrant()');
+        React.render(React.createElement(App, {webServerBase: WEB_SERVER_BASE}),document.getElementById("main"));
+        //React.render(React.createElement(Box, null),document.getElementById("reacttesting"));
+        console.log('Leaving startErrant()');
+        console.log('======================================');
     }
 };
