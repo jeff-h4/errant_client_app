@@ -5,6 +5,7 @@ pushd jsx
   jsx box.jsx > ../js/box.js
   jsx welcome_page.jsx > ../js/welcome_page.js
   jsx welcome_sign_in_form.jsx > ../js/welcome_sign_in_form.js
+  jsx dashboard_page.jsx > ../js/dashboard_page.js
 popd
 echo "Building complete"
 echo "Building Android App"

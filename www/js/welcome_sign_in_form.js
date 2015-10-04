@@ -14,7 +14,14 @@ var WelcomeSignInForm = React.createClass({displayName: "WelcomeSignInForm",
       success: function(data) {
         console.log("I got data!");
         console.log(data);
-      }
+        if (data.result === "success") {
+          console.log("Sign In Successful");
+          this.props.callback();
+        } else {
+          console.log("Sign In Failure");
+          console.log(data);
+        }
+      }.bind(this)
     });
   },
   render: function() {

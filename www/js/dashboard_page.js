@@ -1,16 +1,14 @@
 //INPUT PROPS
 //webServerBase - Base URL of web server
-var WelcomePage = React.createClass({displayName: "WelcomePage",
+var DashboardPage = React.createClass({displayName: "DashboardPage",
   render: function() {
     var windowHeight  = $(window).outerHeight();
     var windowWidth   = $(window).outerWidth();
-    var styles = {backgroundColor: "lightblue",
+    var styles = {backgroundColor: "orange",
                   width:  windowWidth,
                   height: windowHeight};
     return React.createElement("div", {style: styles}, 
-              "Welcome to Errant", 
-              React.createElement(WelcomeSignInForm, {webServerBase: this.props.webServerBase, 
-                                 callback: this.props.pageCallback})
+              "Errant Dashboard"
            );
   }
 });
