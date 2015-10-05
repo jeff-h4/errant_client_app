@@ -36,24 +36,24 @@ var app = {
         //app.receivedEvent('deviceready');
         app.startErrant('deviceready');
     },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        console.log('======================================');
-        console.log('Starting receivedEvent()');
-        console.log("I'm not supposed to be in receivedEvent");
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-        var myReactElement = parentElement.querySelector('#reacttesting');
+    //// Update DOM on a Received Event
+    //receivedEvent: function(id) {
+    //    console.log('======================================');
+    //    console.log('Starting receivedEvent()');
+    //    console.log("I'm not supposed to be in receivedEvent");
+    //    var parentElement = document.getElementById(id);
+    //    var listeningElement = parentElement.querySelector('.listening');
+    //    var receivedElement = parentElement.querySelector('.received');
+    //    var myReactElement = parentElement.querySelector('#reacttesting');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-        React.render(React.createElement(Box, null),document.getElementById("reacttesting"));
-        console.log('Received Event: ' + id);
-        console.log('Leaving receivedEvent()');
-    },
+    //    listeningElement.setAttribute('style', 'display:none;');
+    //    receivedElement.setAttribute('style', 'display:block;');
+    //    React.render(React.createElement(Box, null),document.getElementById("reacttesting"));
+    //    console.log('Received Event: ' + id);
+    //    console.log('Leaving receivedEvent()');
+    //},
     startErrant: function(id) {
-        var WEB_SERVER_BASE = "http://6447b9b6.ngrok.io"; 
+        var WEB_SERVER_BASE = "http://ef48be81.ngrok.io"; 
         console.log('======================================');
         console.log('Entering startErrant()');
         React.render(React.createElement(App, {webServerBase: WEB_SERVER_BASE}),document.getElementById("main"));

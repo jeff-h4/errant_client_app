@@ -1,6 +1,10 @@
+//DESCRIPTION:
+//This component displays a single errand
+//This is part of a table.
+//TODO: Currently focused on Posted Errands. Make it more general
 //INPUT PROPS
 // this.props.webServerBase - Base URL of the webserver
-var WelcomeSignInForm = React.createClass({
+var ErrandList = React.createClass({
   submitButtonClicked: function() {
     //TODO: This isn't actually going to do anything proper. 
     //This will just get alist of errands. I wanna ensure data transfer
@@ -25,25 +29,11 @@ var WelcomeSignInForm = React.createClass({
     });
   },
   render: function() {
-    var myHeight  = "50%";
-    var myWidth   = "50%";
-    var styles = {backgroundColor: "gray",
-                  width:  myHeight,
-                  height: myWidth};
-    return <div style={styles}>
-              <form className="form-control" onSubmit={this.submitButtonClicked}>
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input type="text" name="email" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="password">Password:</label>
-                  <input type="password" name="password" />
-                </div>
-                <div className="form-group">
-                  <input className="btn btn-primary" type="submit" name="Sign In"/>
-                </div>
-              </form> 
-           </div>;
+    //I want to make it so that when it's clicked, call a function. Maybe I do this in the dashboard?
+    return  <div style={styles}>
+              <td>{this.props.title}</td>
+              <td>{this.props.owner}</td>
+              <td>{this.props.runner}</td>
+            </div>;
   }
 });

@@ -8,7 +8,9 @@ var WelcomePage = React.createClass({displayName: "WelcomePage",
                   width:  windowWidth,
                   height: windowHeight};
     return React.createElement("div", {style: styles}, 
-              "Welcome to Errant", 
+              React.createElement("div", null, 
+                "Welcome to Errant"
+              ), 
               React.createElement(WelcomeSignInForm, {webServerBase: this.props.webServerBase, 
                                  callback: this.props.pageCallback})
            );

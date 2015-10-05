@@ -52,6 +52,10 @@ body {
     position:absolute;             /* position in the center of the screen */
     text-align:center;
 }
+.page {
+  position: absolute;
+  text-align:center;
+}
 .center_element {
     position:absolute;             /* position in the center of the screen */
     left:50%;
@@ -76,6 +80,75 @@ h1 {
     padding:2px 0px;
 }
 
+.posted-errand-tile {
+    background-color: #33FF00; /*limegreen*/
+    height: 150px;
+    width: 150px;
+    display: inline;
+    position: relative;
+}
+.accepted-errand-tile {
+    background-color: #99CCFF; /*lightblue*/
+    height: 150px;
+    width: 150px;
+    display: inline;
+    position: relative;
+}
+/* START of DASH Sample */
+.dummy {
+    margin-top: 100%;
+}
+.thumbnail {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    top: 15px;
+    bottom: 0;
+    left: 15px;
+    right: 0;
+    text-align:center;
+    padding-top:calc(50% - 30px);
+}
+.dashheader {
+  width: 100%;
+  height: 100px;
+  background-color: #E8E8E8;
+  border-radius: 10px;
+  clear: both;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 10px;
+
+}
+.dashmain {
+  background-color: orange;
+  border-radius: 5px;
+  width: 100%;
+  height: 300px;
+  float: left;
+}
+div.clear {
+  clear: both;
+}
+.dashfooter {
+  background-color: #E8E8E8;
+  border-radius: 10px;
+  margin-top: 50px;
+  width: 100%;
+  height: 100px; 
+  clear: both;
+}
+/*
+.dashright {
+  background-color: orange;
+  border-radius: 5px;
+  width: 75%;
+  height: 300px;
+  float: left;
+}
+*/
+
+/* END of DASH Sample */
 /*
 .event.listening {
     background-color:#333333;
@@ -87,7 +160,9 @@ h1 {
     display:none;
 }
 */
-
+/*================================================================== */
+/* Animations */
+/*================================================================== */
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }

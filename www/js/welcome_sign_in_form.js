@@ -31,12 +31,18 @@ var WelcomeSignInForm = React.createClass({displayName: "WelcomeSignInForm",
                   width:  myHeight,
                   height: myWidth};
     return React.createElement("div", {style: styles}, 
-              React.createElement("form", {onSubmit: this.submitButtonClicked}, 
-                React.createElement("label", {for: "email"}, "Email:"), 
-                React.createElement("input", {type: "text", name: "email"}), 
-                React.createElement("label", {for: "password"}, "Password:"), 
-                React.createElement("input", {type: "password", name: "password"}), 
-                React.createElement("input", {type: "submit", name: "Sign In"})
+              React.createElement("form", {className: "form-control", onSubmit: this.submitButtonClicked}, 
+                React.createElement("div", {className: "form-group"}, 
+                    React.createElement("label", {htmlFor: "email"}, "Email:"), 
+                    React.createElement("input", {type: "text", name: "email"})
+                ), 
+                React.createElement("div", {className: "form-group"}, 
+                  React.createElement("label", {htmlFor: "password"}, "Password:"), 
+                  React.createElement("input", {type: "password", name: "password"})
+                ), 
+                React.createElement("div", {className: "form-group"}, 
+                  React.createElement("input", {className: "btn btn-primary", type: "submit", name: "Sign In"})
+                )
               )
            );
   }
