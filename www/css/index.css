@@ -56,8 +56,18 @@ body {
   position: absolute;
   text-align:center;
 }
+.welcome-page {
+  background-color: "lightblue";
+}
+.section-summary {
+  background-color: "blue";
+}
+.section-posted-errands {
+  background-color: "yellow";
+}
+
 .center_element {
-    position:absolute;             /* position in the center of the screen */
+    position:relative;             /* position in the center of the screen */
     left:50%;
     top:50%;
     height:50px;                   /* text area height */
@@ -84,14 +94,28 @@ h1 {
     background-color: #33FF00; /*limegreen*/
     height: 150px;
     width: 150px;
-    display: inline;
+    /*display: inline;*/
     position: relative;
 }
 .accepted-errand-tile {
     background-color: #99CCFF; /*lightblue*/
     height: 150px;
     width: 150px;
-    display: inline;
+    /*display: inline;*/
+    position: relative;
+}
+.pending-errand-tile {
+    background-color: #99CCFF; /*lightblue*/
+    height: 150px;
+    width: 150px;
+    /*display: inline;*/
+    position: relative;
+}
+.completed-errand-tile {
+    background-color: #99CCFF; /*lightblue*/
+    height: 150px;
+    width: 150px;
+    /*display: inline;*/
     position: relative;
 }
 /* START of DASH Sample */
@@ -114,29 +138,29 @@ h1 {
   height: 100px;
   background-color: #E8E8E8;
   border-radius: 10px;
-  clear: both;
+  /*clear: both;*/
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 
 }
 .dashmain {
-  background-color: orange;
+  background-color: black;
   border-radius: 5px;
   width: 100%;
-  height: 300px;
+  height: 400px;
   float: left;
 }
-div.clear {
+.clear {
   clear: both;
 }
 .dashfooter {
   background-color: #E8E8E8;
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 0;
   width: 100%;
   height: 100px; 
-  clear: both;
+  /*clear: both;*/
 }
 /*
 .dashright {

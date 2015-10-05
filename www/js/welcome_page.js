@@ -2,17 +2,16 @@
 //webServerBase - Base URL of web server
 var WelcomePage = React.createClass({displayName: "WelcomePage",
   render: function() {
-    var windowHeight  = $(window).outerHeight();
-    var windowWidth   = $(window).outerWidth();
-    var styles = {backgroundColor: "lightblue",
-                  width:  windowWidth,
-                  height: windowHeight};
-    return React.createElement("div", {style: styles}, 
-              React.createElement("div", null, 
-                "Welcome to Errant"
+    return React.createElement("div", {className: "welcome-page"}, 
+              React.createElement("div", {className: "row"}, 
+                React.createElement("div", {className: "col-xs-12"}, 
+                  "Welcome to Errant"
+                )
               ), 
-              React.createElement(WelcomeSignInForm, {webServerBase: this.props.webServerBase, 
-                                 callback: this.props.pageCallback})
+              React.createElement("div", {className: "row"}, 
+                React.createElement(WelcomeSignInForm, {webServerBase: this.props.webServerBase, 
+                                   callback: this.props.pageCallback})
+              )
            );
   }
 });

@@ -25,25 +25,22 @@ var WelcomeSignInForm = React.createClass({
     });
   },
   render: function() {
-    var myHeight  = "50%";
-    var myWidth   = "50%";
-    var styles = {backgroundColor: "gray",
-                  width:  myHeight,
-                  height: myWidth};
-    return <div style={styles}>
-              <form className="form-control" onSubmit={this.submitButtonClicked}>
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input type="text" name="email" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="password">Password:</label>
-                  <input type="password" name="password" />
-                </div>
-                <div className="form-group">
-                  <input className="btn btn-primary" type="submit" name="Sign In"/>
-                </div>
-              </form> 
-           </div>;
+    return  <div className="row center-element">
+              <div className="col-xs-8">
+                <form className="form-control" onSubmit={this.submitButtonClicked}>
+                  <div className="form-group">
+                      <label htmlFor="email">Email:</label>
+                      <input type="text" name="email" />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" name="password" />
+                  </div>
+                  <div className="form-group">
+                    <input className="btn btn-primary" type="submit" name="Sign In"/>
+                  </div>
+                </form> 
+              </div>
+            </div>;
   }
 });
