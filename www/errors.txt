@@ -1,0 +1,7 @@
+
+2015-10-06
+When submitting the Add Errand From, the Chrome Dev tools are showing the message below,
+everytime I press a key in the form.
+> ReactUpdates.asap: Can't enqueue an asap callback in a context whereupdates are not being batched
+
+Some comments online say to add react_widgets

@@ -17,19 +17,15 @@
  * under the License.
  */
 * {
-  -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
-* {
-  margin: 0;
-  padding: 0;
-}
+
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#ADDE86; /* Light Blue */
-    /*background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);       */
-    /*
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-gradient(
@@ -39,7 +35,6 @@ body {
         color-stop(0, #A7A7A7),
         color-stop(0.51, #E4E4E4)
     );
-    */
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -49,51 +44,32 @@ body {
     text-transform:uppercase;
     width:100%;
 }
-div {
-  margin: 0;
-  padding: 0;
-}
+
 /* Portrait layout (default) */
 .app {
+    background:url(../img/cookieMonster.png) no-repeat center top; /* 170px x 200px */
+    background-size: 170px 200px;
     position:absolute;             /* position in the center of the screen */
-    text-align:center;
-}
-.page {
-  text-align:center;
-}
-.welcome-page {
-  background-color: lightblue;
-}
-.welcome-signin-form {
-  position: absolute;
-  top: 100px;
-  text-align: center;
-}
-.section-add-errand-form {
-  top: 100px;
-  text-align: center;
-}
-.section-summary {
-  margin-left: 0;
-  padding-left: 0;
-  background-color: blue;
-}
-.section-posted-errands {
-  background-color: yellow;
-}
-.section-accepted-errands {
-  background-color: yellow;
-}
-.section-completed-errands {
-  background-color: yellow;
-}
-
-.center_element {
-    position:relative;             /* position in the center of the screen */
     left:50%;
     top:50%;
     height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
 }
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
 h1 {
     font-size:24px;
     font-weight:normal;
@@ -111,83 +87,7 @@ h1 {
     margin:0px 30px;
     padding:2px 0px;
 }
-/*NOTE from Gabe: Do not specify height/width when using bootstrap for the tiles*/
-.posted-errand-tile {
-    background-color: #33FF00; /*limegreen*/
-    /*display: inline;*/
-    position: relative;
-}
-.accepted-errand-tile {
-    background-color: #99CCFF; /*lightblue*/
-    /*display: inline;*/
-    position: relative;
-}
-.pending-errand-tile {
-    background-color: #99CCFF; /*lightblue*/
-    /*display: inline;*/
-    position: relative;
-}
-.completed-errand-tile {
-    background-color: #99CCFF; /*lightblue*/
-    /*display: inline;*/
-    position: relative;
-}
-/* START of DASH Sample */
-.dummy {
-    margin-top: 100%;
-}
-.thumbnail {
-    position: relative;
-    width: 100px;
-    /*height: 100px;*/
-    top: 15px;
-    bottom: 0;
-    left: 15px;
-    right: 0;
-    text-align:center;
-    padding-top:calc(50% - 30px);
-}
-.dashheader {
-  width: 100%;
-  height: 100px;
-  background-color: #E8E8E8;
-  border-radius: 10px;
-  /*clear: both;*/
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
 
-}
-.dashmain {
-  background-color: black;
-  border-radius: 5px;
-  width: 100%;
-  height: 400px;
-  float: left;
-}
-.clear {
-  clear: both;
-}
-.dashfooter {
-  background-color: #E8E8E8;
-  border-radius: 10px;
-  margin-top: 0;
-  width: 100%;
-  height: 100px; 
-  /*clear: both;*/
-}
-/*
-.dashright {
-  background-color: orange;
-  border-radius: 5px;
-  width: 75%;
-  height: 300px;
-  float: left;
-}
-*/
-
-/* END of DASH Sample */
-/*
 .event.listening {
     background-color:#333333;
     display:block;
@@ -197,10 +97,7 @@ h1 {
     background-color:#4B946A;
     display:none;
 }
-*/
-/*================================================================== */
-/* Animations */
-/*================================================================== */
+
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }

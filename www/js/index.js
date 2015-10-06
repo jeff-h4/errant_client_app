@@ -19,6 +19,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
+        console.log("app.initialize() called");
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -26,6 +27,7 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
+        console.log("BINDING deviceready");
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
@@ -33,6 +35,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        console.log("EVENT: onDeviceReady received!");
         //app.receivedEvent('deviceready');
         app.startErrant('deviceready');
     },
@@ -53,7 +56,7 @@ var app = {
     //    console.log('Leaving receivedEvent()');
     //},
     startErrant: function(id) {
-        var WEB_SERVER_BASE = "http://e9ad9e2e.ngrok.io"; 
+        var WEB_SERVER_BASE = "http://428c3496.ngrok.io"; 
         console.log('======================================');
         console.log('Entering startErrant()');
         React.render(React.createElement(App, {webServerBase: WEB_SERVER_BASE}),document.getElementById("main"));
