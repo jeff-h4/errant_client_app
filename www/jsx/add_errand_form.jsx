@@ -20,10 +20,10 @@ var AddErrandForm = React.createClass({
       method: "POST",
       url: this.props.webServerBase + "/errands.json",
       data: {
-        title: errandTitle,
-        item_name: errandItem,
-        price: errandPrice,
-        store: errandStore  
+        errand: {title: errandTitle,
+                 item_name: errandItem,
+                 price: errandPrice,
+                 store: errandStore}
       },
       success: function(data) {
         console.log("AddErrandForm: Got response from my AJAX Post");
