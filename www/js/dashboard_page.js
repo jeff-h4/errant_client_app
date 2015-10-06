@@ -41,6 +41,10 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
   processErrandTileClick: function(clickedElement) {
     if (clickedElement === "Posted") {
       this.setState({displayState: "displayPosted"});
+    } else if (clickedElement === "Accepted") {
+      this.setState({displayState: "displayAccepted"});
+    } else if (clickedElement === "Completed") {
+      this.setState({displayState: "displayCompleted"});
     } else {
       console.log("DASHBOARD_PAGE processErrandTileClick(): Unsupported clicked element");
     }
@@ -54,7 +58,22 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
                                                  price: oneErrand.price, 
                                                  store: oneErrand.store});
                              });
-
+    var accepted_errand_tags = this.state.accepted_errands.map(function(oneErrand) {
+                                return React.createElement(ErrandItem, {id: oneErrand.id, 
+                                                 owner: oneErrand.owner, 
+                                                 title: oneErrand.title, 
+                                                 runner: oneErrand.runner, 
+                                                 price: oneErrand.price, 
+                                                 store: oneErrand.store});
+                             });
+    var completed_errand_tags = this.state.completed_errands.map(function(oneErrand) {
+                                return React.createElement(ErrandItem, {id: oneErrand.id, 
+                                                 owner: oneErrand.owner, 
+                                                 title: oneErrand.title, 
+                                                 runner: oneErrand.runner, 
+                                                 price: oneErrand.price, 
+                                                 store: oneErrand.store});
+                             });
     if (this.state.displayState === "summary")  {
       return  React.createElement("div", {className: "section-summary"}, 
                 React.createElement("div", {className: "dashheader"}, 
@@ -98,7 +117,29 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
               );
       //END return 'displayPosted'
     } else if (this.state.displayState === "displayAccepted") {
+      return  React.createElement("div", {className: "section-accepted-errands"}, 
+                React.createElement("div", {className: "dashheader"}, 
+                  React.createElement("h1", null, "Accepted Errands")
+                ), 
+                React.createElement("div", {className: "dashmain"}, 
+                  accepted_errand_tags
+                ), 
+                React.createElement("div", {className: "dashfooter"}
+                )
+              );
       //END return 'displayAccepted'
+     } else if (this.state.displayState === "displayCompleted") {
+      return  React.createElement("div", {className: "section-completed-errands"}, 
+                React.createElement("div", {className: "dashheader"}, 
+                  React.createElement("h1", null, "Completed Errands")
+                ), 
+                React.createElement("div", {className: "dashmain"}, 
+                  completed_errand_tags
+                ), 
+                React.createElement("div", {className: "dashfooter"}
+                )
+              );
+      //END return 'displayCompleted' 
     } else {
       return  React.createElement("div", null, 
                 React.createElement("p", null, "Dashboard_Page entered unsupported state ", this.state.displayState)
