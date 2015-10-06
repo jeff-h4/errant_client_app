@@ -4,10 +4,9 @@ var DashboardPage = React.createClass({
   getInitialState: function() {
     return {
       displayState: "summary",
-      posted_errands: {},
-      accepted_errands:  {},
-      pending_errands:  {},
-      completed_errands:  {}
+      posted_errands: [],
+      accepted_errands:  [],
+      completed_errands: [] 
     };
   },
   componentDidMount: function() {
@@ -16,12 +15,21 @@ var DashboardPage = React.createClass({
       url: this.props.webServerBase + "/errands.json",
       success: function(data) {
         if (data.result === "success") {
+          console.log("data");
           console.log(data);
+          console.log("my_posted_errands");
+          console.log(typeof(data.my_posted_errands));
           console.log(data.my_posted_errands);
+          console.log("my_accepted_errands");
+          console.log(typeof(data.my_accepted_errands));
           console.log(data.my_accepted_errands);
+          console.log("my_completed_errands");
+          console.log(typeof(data.my_completed_errands));
+          console.log(data.my_completed_errands);
           this.setState({
             posted_errands: data.my_posted_errands,
-            accepted_errands: data.my_accepted_errands
+            accepted_errands: data.my_accepted_errands,
+            completed_errands: data.my_completed_errands
           });
         } else {
           console.log("DashboardPage componentDidMount(): Ajax Error");
@@ -38,15 +46,15 @@ var DashboardPage = React.createClass({
     }
   },
   render: function() {
-    //var postedErrandTile = function() {
-    //  this.state.posted_errands.map(function(p) {
-    //    return <div className=""></div>;
-    //  });
-    //};
-    //var acceptedErrandTile = function() {
-    //};
+    var posted_errand_tags = this.state.posted_errands.map(function(oneErrand) {
+                                return <ErrandItem id={oneErrand.id}
+                                                 owner={oneErrand.owner}
+                                                 title={oneErrand.title}
+                                                 runner={oneErrand.runner}
+                                                 price={oneErrand.price}
+                                                 store={oneErrand.store}/>;
+                             });
 
-    //<ErrandTile tilename="Posted" numErrands={_.size(this.state.posted_errands)}
     if (this.state.displayState === "summary")  {
       return  <div className="section-summary">
                 <div className="dashheader">
@@ -59,19 +67,14 @@ var DashboardPage = React.createClass({
                                   errand_count={_.size(this.state.posted_errands)}
                                   parentCallback={this.processErrandTileClick}/>
                     </div>
-                    <div className="col-xs-offset-1 col-xs-5 thumbnail accepted-errand-tile">
+                    <div className="col-xs-5 thumbnail accepted-errand-tile">
                       <ErrandTile tile_title="Accepted" 
                                   errand_count={_.size(this.state.accepted_errands)}
                                   parentCallback={this.processErrandTileClick}/>
                     </div>
                   </div>
                   <div className="row">
-                    <div className="col-xs-6 col-xs-offset-1 thumbnail pending-errand-tile">
-                      <ErrandTile tile_title="Pending" 
-                                  errand_count={_.size(this.state.pending_errands)}
-                                  parentCallback={this.processErrandTileClick}/>
-                    </div>
-                    <div className="col-xs-offset-1 col-xs-6 thumbnail completed-errand-tile">
+                    <div className="col-xs-5 thumbnail completed-errand-tile">
                       <ErrandTile tile_title="Completed" 
                                   errand_count={_.size(this.state.completed_errands)}
                                   parentCallback={this.processErrandTileClick}/>
@@ -88,7 +91,7 @@ var DashboardPage = React.createClass({
                   <h1>Posted Errands</h1>
                 </div>
                 <div className="dashmain">
-                  <p>PostedErrands Content</p>
+                  {posted_errand_tags}
                 </div>
                 <div className="dashfooter">
                 </div>
@@ -100,7 +103,7 @@ var DashboardPage = React.createClass({
       return  <div>
                 <p>Dashboard_Page entered unsupported state {this.state.displayState}</p>
               </div>;
-      //END return 'Unsuported State'
+      //END return 'Unsupported State'
     }
 
   }

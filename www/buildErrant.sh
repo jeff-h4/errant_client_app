@@ -7,6 +7,7 @@ pushd jsx
   jsx welcome_sign_in_form.jsx > ../js/welcome_sign_in_form.js
   jsx dashboard_page.jsx > ../js/dashboard_page.js
   jsx errand_tile.jsx > ../js/errand_tile.js
+  jsx errand_item.jsx > ../js/errand_item.js
 popd
 echo "Building complete"
 echo "Building Android App"

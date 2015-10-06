@@ -4,8 +4,10 @@ var WelcomeSignInForm = React.createClass({displayName: "WelcomeSignInForm",
   submitButtonClicked: function() {
     //TODO: This isn't actually going to do anything proper. 
     //This will just get alist of errands. I wanna ensure data transfer
-    var userEmail = $("[name='email']").val();
+    var userEmail = $("#signin-email").val();
+    var userPassword = $("#signin-password").val();
     console.log("WelcomeSignInForm: Email is" + userEmail);
+    console.log("WelcomeSignInForm: Password is" + userPassword);
     console.log("WelcomeSignInForm: webServerBase is" + this.props.webServerBase);
     $.ajax({
       method: "POST",
@@ -25,20 +27,18 @@ var WelcomeSignInForm = React.createClass({displayName: "WelcomeSignInForm",
     });
   },
   render: function() {
-    return  React.createElement("div", {className: "row center-element"}, 
-              React.createElement("div", {className: "col-xs-8"}, 
-                React.createElement("form", {className: "form-control", onSubmit: this.submitButtonClicked}, 
+    return  React.createElement("div", {className: "row welcome-signin-form"}, 
+              React.createElement("div", {className: "col-xs-12"}, 
+                React.createElement("form", {onSubmit: this.submitButtonClicked}, 
                   React.createElement("div", {className: "form-group"}, 
-                      React.createElement("label", {htmlFor: "email"}, "Email:"), 
-                      React.createElement("input", {type: "text", name: "email"})
+                      React.createElement("label", {htmlFor: "signin-email"}, "Email:"), 
+                      React.createElement("input", {className: "form-control", type: "email", id: "signin-email"})
                   ), 
                   React.createElement("div", {className: "form-group"}, 
-                    React.createElement("label", {htmlFor: "password"}, "Password:"), 
-                    React.createElement("input", {type: "password", name: "password"})
+                    React.createElement("label", {htmlFor: "signin-password"}, "Password:"), 
+                    React.createElement("input", {className: "form-control", type: "password", id: "signin-password"})
                   ), 
-                  React.createElement("div", {className: "form-group"}, 
-                    React.createElement("input", {className: "btn btn-primary", type: "submit", name: "Sign In"})
-                  )
+                  React.createElement("input", {className: "btn btn-primary", type: "submit"})
                 )
               )
             );
