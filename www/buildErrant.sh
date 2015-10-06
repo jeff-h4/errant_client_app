@@ -6,6 +6,7 @@ pushd jsx
   jsx welcome_page.jsx > ../js/welcome_page.js
   jsx welcome_sign_in_form.jsx > ../js/welcome_sign_in_form.js
   jsx dashboard_page.jsx > ../js/dashboard_page.js
+  jsx add_errand_form.jsx > ../js/add_errand_form.js
   jsx errand_tile.jsx > ../js/errand_tile.js
   jsx errand_item.jsx > ../js/errand_item.js
 popd

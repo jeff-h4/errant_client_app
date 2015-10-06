@@ -66,7 +66,11 @@ div {
 }
 .welcome-signin-form {
   position: absolute;
-  top: 200px;
+  top: 100px;
+  text-align: center;
+}
+.section-add-errand-form {
+  top: 100px;
   text-align: center;
 }
 .section-summary {
