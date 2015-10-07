@@ -63,6 +63,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
                                 return React.createElement(ErrandItem, {id: oneErrand.id, 
                                                    owner: oneErrand.owner, 
                                                    title: oneErrand.title, 
+                                                   item_name: oneErrand.item_name, 
                                                    runner: oneErrand.runner, 
                                                    price: oneErrand.price, 
                                                    store: oneErrand.store, 
@@ -72,25 +73,27 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
                              }.bind(this));
     var accepted_errand_tags = this.state.accepted_errands.map(function(oneErrand) {
                                 return React.createElement(ErrandItem, {id: oneErrand.id, 
-                                                 owner: oneErrand.owner, 
-                                                 title: oneErrand.title, 
-                                                 runner: oneErrand.runner, 
-                                                 price: oneErrand.price, 
-                                                 store: oneErrand.store, 
-                                                 aasm_state: oneErrand.aasm_state, 
-                                                 webServerBase: this.props.webServerBase}
-                                                 );
+                                                   owner: oneErrand.owner, 
+                                                   title: oneErrand.title, 
+                                                   item_name: oneErrand.item_name, 
+                                                   runner: oneErrand.runner, 
+                                                   price: oneErrand.price, 
+                                                   store: oneErrand.store, 
+                                                   aasm_state: oneErrand.aasm_state, 
+                                                   webServerBase: this.props.webServerBase}
+                                                   );
                              }.bind(this));
     var completed_errand_tags = this.state.completed_errands.map(function(oneErrand) {
                                 return React.createElement(ErrandItem, {id: oneErrand.id, 
-                                                 owner: oneErrand.owner, 
-                                                 title: oneErrand.title, 
-                                                 runner: oneErrand.runner, 
-                                                 price: oneErrand.price, 
-                                                 store: oneErrand.store, 
-                                                 aasm_state: oneErrand.aasm_state, 
-                                                 webServerBase: this.props.webServerBase}
-                                                 );
+                                                   owner: oneErrand.owner, 
+                                                   title: oneErrand.title, 
+                                                   item_name: oneErrand.item_name, 
+                                                   runner: oneErrand.runner, 
+                                                   price: oneErrand.price, 
+                                                   store: oneErrand.store, 
+                                                   aasm_state: oneErrand.aasm_state, 
+                                                   webServerBase: this.props.webServerBase}
+                                                   );
                              }.bind(this));
     if (this.state.displayState === "summary")  {
       return  React.createElement("div", {className: "section-summary"}, 

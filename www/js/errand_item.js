@@ -45,10 +45,15 @@ var ErrandItem = React.createClass({displayName: "ErrandItem",
     if (this.state.interactionState === "displayBrief") {
       return  React.createElement("div", {className: "errand-element"}, 
                 React.createElement("a", {href: "#", onClick: this.toggleDisplayState}, 
-                  React.createElement("div", null, 
-                    React.createElement("p", null, "Errand ", this.props.id), 
-                    React.createElement("p", null, this.props.owner, " | ", this.props.runner, " | ", this.props.title), 
-                    React.createElement("p", null, this.props.stores, " | $", this.props.price)
+                  React.createElement("table", null, 
+                    React.createElement("tr", null, 
+                      React.createElement("td", {rowSpan: "2"}, React.createElement("img", {src: "img/cat.png", className: "errand-user-profile-img"})), 
+                      React.createElement("td", {colSpan: "2"}, this.props.item_name)
+                    ), 
+                    React.createElement("tr", null, 
+                      React.createElement("td", null, this.props.store), 
+                      React.createElement("td", null, "$", this.props.price)
+                    )
                   )
                 )
               );

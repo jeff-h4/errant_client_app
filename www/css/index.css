@@ -27,7 +27,6 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color: darkgray;
     /*background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);       */
     /*
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -55,7 +54,6 @@ div {
 }
 /* Portrait layout (default) */
 .app {
-  background-color: black;
   position:absolute;             /* position in the center of the screen */
   text-align:center;
 }
@@ -73,16 +71,12 @@ div {
 .section-summary {
   margin-left: 0;
   padding-left: 0;
-  background-color: blue;
 }
 .section-posted-errands {
-  background-color: yellow;
 }
 .section-accepted-errands {
-  background-color: yellow;
 }
 .section-completed-errands {
-  background-color: yellow;
 }
 .errand-element {
   background-color: purple;
@@ -133,6 +127,10 @@ h1 {
     /*display: inline;*/
     position: relative;
 }
+.errand-user-profile-img {
+  width: 50px;
+  height: 50px;
+}
 .thumbnail {
     position: relative;
     width: 100px;
@@ -147,16 +145,14 @@ h1 {
 .dashheader {
   width: 100%;
   height: 100px;
-  background-color: #E8E8E8;
-  border-radius: 10px;
+  border: orange;
   /*clear: both;*/
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 0;
 }
 .dash-content {
-  background-color: black;
-  border-radius: 5px;
+  border: yellow;
   width: 100%;
   height: 400px;
   float: left;
@@ -165,8 +161,7 @@ h1 {
   clear: both;
 }
 .dash-footer {
-  background-color: #E8E8E8;
-  border-radius: 10px;
+  border: red;
   margin-top: 0;
   width: 100%;
   height: 100px; 
