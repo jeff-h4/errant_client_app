@@ -14,6 +14,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
     };
   },
   componentDidMount: function() {
+    $.mobile.initializePage();
     this.updateErrandsInfo();
   },
   updateErrandsInfo: function() {
@@ -93,10 +94,10 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
                              }.bind(this));
     if (this.state.displayState === "summary")  {
       return  React.createElement("div", {className: "section-summary"}, 
-                React.createElement("div", {className: "dashheader"}, 
+                React.createElement("div", {className: "dash-header"}, 
                   React.createElement("h1", null, "Errant Dashboard")
                 ), 
-                React.createElement("div", {className: "dashmain"}, 
+                React.createElement("div", {className: "dash-content"}, 
                   React.createElement("div", {className: "row"}, 
                     React.createElement("button", {type: "button", className: "btn btn-info", onClick: this.processLocalNewErrandClick}, "+ New Errand")
                   ), 
@@ -120,7 +121,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
                     )
                   )
                 ), 
-                React.createElement("div", {className: "dashfooter"}
+                React.createElement("div", {className: "dash-footer"}
                 )
               );
       //END return 'summary'
