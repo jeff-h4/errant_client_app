@@ -97,7 +97,7 @@ var DashboardPage = React.createClass({
                              }.bind(this));
     if (this.state.displayState === "summary")  {
       return  <div className="section-summary">
-                <div className="dash-header">
+                <div className="page-header dash-header">
                   <h1>Errant Dashboard</h1>
                 </div>
                 <div className="dash-content">
@@ -135,37 +135,37 @@ var DashboardPage = React.createClass({
               </div>;
     } else if (this.state.displayState === "displayPosted") {
       return  <div className="section-posted-errands">
-                <div className="dashheader">
+                <div className="page-header dash-header">
                   <h1>Posted Errands</h1>
                 </div>
-                <div className="dashmain">
+                <div className="panel panel-default">
                   {posted_errand_tags}
                 </div>
-                <div className="dashfooter">
+                <div className="dash-footer">
                 </div>
               </div>;
       //END return 'displayPosted'
     } else if (this.state.displayState === "displayAccepted") {
       return  <div className="section-accepted-errands">
-                <div className="dashheader">
+                <div className="dash-header page-header">
                   <h1>Accepted Errands</h1>
                 </div>
-                <div className="dashmain">
+                <div className="panel panel-default dash-main">
                   {accepted_errand_tags}
                 </div>
-                <div className="dashfooter">
+                <div className="dash-footer">
                 </div>
               </div>;
       //END return 'displayAccepted'
      } else if (this.state.displayState === "displayCompleted") {
       return  <div className="section-completed-errands">
-                <div className="dashheader">
+                <div className="dash-header page-header">
                   <h1>Completed Errands</h1>
                 </div>
-                <div className="dashmain">
+                <div className="dash-main panel panel-default">
                   {completed_errand_tags}
                 </div>
-                <div className="dashfooter">
+                <div className="dash-footer">
                 </div>
               </div>;
       //END return 'displayCompleted' 

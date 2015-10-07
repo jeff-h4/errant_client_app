@@ -43,7 +43,22 @@ var ErrandItem = React.createClass({displayName: "ErrandItem",
     },
     render: function() {
     if (this.state.interactionState === "displayBrief") {
-      return  React.createElement("div", {className: "errand-element"}, 
+      return  React.createElement("div", {className: "errand-element panel-body"}, 
+                React.createElement("a", {href: "#", onClick: this.toggleDisplayState}, 
+                    React.createElement("table", null, 
+                      React.createElement("tr", null, 
+                        React.createElement("td", {rowSpan: "2"}, React.createElement("img", {src: "img/cat.png", className: "errand-user-profile-img"})), 
+                        React.createElement("td", {colSpan: "2"}, this.props.item_name)
+                      ), 
+                      React.createElement("tr", null, 
+                        React.createElement("td", null, this.props.store), 
+                        React.createElement("td", null, "$", this.props.price)
+                      )
+                    )
+                )
+              );
+    } else {
+      return  React.createElement("div", {className: "errand-element-active well panel-body"}, 
                 React.createElement("a", {href: "#", onClick: this.toggleDisplayState}, 
                   React.createElement("table", null, 
                     React.createElement("tr", null, 
@@ -53,23 +68,14 @@ var ErrandItem = React.createClass({displayName: "ErrandItem",
                     React.createElement("tr", null, 
                       React.createElement("td", null, this.props.store), 
                       React.createElement("td", null, "$", this.props.price)
+                    ), 
+                    React.createElement("tr", null, 
+                      React.createElement("td", null, "Owner: ", this.props.owner), 
+                      React.createElement("td", null, "Runner: ", this.props.runner)
                     )
                   )
-                )
-              );
-    } else {
-      return  React.createElement("div", {className: "errand-element-active"}, 
-                React.createElement("a", {href: "#", onClick: this.toggleDisplayState}, 
-                  React.createElement("div", null, 
-                    React.createElement("p", null, "Errand ", this.props.id, ": ", this.props.title), 
-                    React.createElement("p", null, "Status: ", this.props.aasm_state), 
-                    React.createElement("p", null, "Owner: ", this.props.owner), 
-                    React.createElement("p", null, "Runner: ", this.props.runner), 
-                    React.createElement("p", null, "$", this.props.price), 
-                    React.createElement("p", null, this.props.store), 
-                    React.createElement(ErrandActionButtons, {errandState: this.props.aasm_state, parentCallback: this.execAction})
-                  )
-                )
+                ), 
+                React.createElement(ErrandActionButtons, {errandState: this.props.aasm_state, parentCallback: this.execAction})
               );
  
     }

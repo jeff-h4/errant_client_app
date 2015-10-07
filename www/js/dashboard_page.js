@@ -97,7 +97,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
                              }.bind(this));
     if (this.state.displayState === "summary")  {
       return  React.createElement("div", {className: "section-summary"}, 
-                React.createElement("div", {className: "dash-header"}, 
+                React.createElement("div", {className: "page-header dash-header"}, 
                   React.createElement("h1", null, "Errant Dashboard")
                 ), 
                 React.createElement("div", {className: "dash-content"}, 
@@ -135,37 +135,37 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
               );
     } else if (this.state.displayState === "displayPosted") {
       return  React.createElement("div", {className: "section-posted-errands"}, 
-                React.createElement("div", {className: "dashheader"}, 
+                React.createElement("div", {className: "page-header dash-header"}, 
                   React.createElement("h1", null, "Posted Errands")
                 ), 
-                React.createElement("div", {className: "dashmain"}, 
+                React.createElement("div", {className: "panel panel-default"}, 
                   posted_errand_tags
                 ), 
-                React.createElement("div", {className: "dashfooter"}
+                React.createElement("div", {className: "dash-footer"}
                 )
               );
       //END return 'displayPosted'
     } else if (this.state.displayState === "displayAccepted") {
       return  React.createElement("div", {className: "section-accepted-errands"}, 
-                React.createElement("div", {className: "dashheader"}, 
+                React.createElement("div", {className: "dash-header page-header"}, 
                   React.createElement("h1", null, "Accepted Errands")
                 ), 
-                React.createElement("div", {className: "dashmain"}, 
+                React.createElement("div", {className: "panel panel-default dash-main"}, 
                   accepted_errand_tags
                 ), 
-                React.createElement("div", {className: "dashfooter"}
+                React.createElement("div", {className: "dash-footer"}
                 )
               );
       //END return 'displayAccepted'
      } else if (this.state.displayState === "displayCompleted") {
       return  React.createElement("div", {className: "section-completed-errands"}, 
-                React.createElement("div", {className: "dashheader"}, 
+                React.createElement("div", {className: "dash-header page-header"}, 
                   React.createElement("h1", null, "Completed Errands")
                 ), 
-                React.createElement("div", {className: "dashmain"}, 
+                React.createElement("div", {className: "dash-main panel panel-default"}, 
                   completed_errand_tags
                 ), 
-                React.createElement("div", {className: "dashfooter"}
+                React.createElement("div", {className: "dash-footer"}
                 )
               );
       //END return 'displayCompleted' 

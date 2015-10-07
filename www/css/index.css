@@ -79,11 +79,9 @@ div {
 .section-completed-errands {
 }
 .errand-element {
-  background-color: purple;
   color: white; /*text color*/
 }
 .errand-element-active {
-  background-color: pink;
   color: white; /*text color*/
 }
 .center-element {
