@@ -60,11 +60,11 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
   render: function() {
     var posted_errand_tags = this.state.posted_errands.map(function(oneErrand) {
                                 return React.createElement(ErrandItem, {id: oneErrand.id, 
-                                                 owner: oneErrand.owner, 
-                                                 title: oneErrand.title, 
-                                                 runner: oneErrand.runner, 
-                                                 price: oneErrand.price, 
-                                                 store: oneErrand.store});
+                                                   owner: oneErrand.owner, 
+                                                   title: oneErrand.title, 
+                                                   runner: oneErrand.runner, 
+                                                   price: oneErrand.price, 
+                                                   store: oneErrand.store});
                              });
     var accepted_errand_tags = this.state.accepted_errands.map(function(oneErrand) {
                                 return React.createElement(ErrandItem, {id: oneErrand.id, 

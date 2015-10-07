@@ -15,7 +15,7 @@ var ErrandItem = React.createClass({displayName: "ErrandItem",
     //},
     render: function() {
     //I want to make it so that when it's clicked, call a function. Maybe I do this in the dashboard?
-    return  React.createElement("div", null, 
+    return  React.createElement("div", {className: "errand-element"}, 
               React.createElement("p", null, "Errand ", this.props.id), 
               React.createElement("p", null, this.props.owner, " | ", this.props.runner, " | ", this.props.title), 
               React.createElement("p", null, this.props.stores, " | $", this.props.price)
