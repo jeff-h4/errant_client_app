@@ -9,6 +9,7 @@ pushd jsx
   jsx add_errand_form.jsx > ../js/add_errand_form.js
   jsx errand_tile.jsx > ../js/errand_tile.js
   jsx errand_item.jsx > ../js/errand_item.js
+  jsx errand_action_buttons.jsx > ../js/errand_action_buttons.js
 popd
 echo "Building complete"
 echo "Building Android App"

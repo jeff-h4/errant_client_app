@@ -87,7 +87,14 @@ div {
 .section-completed-errands {
   background-color: yellow;
 }
-
+.errand-element {
+  background-color: purple;
+  color: white; /*text color*/
+}
+.errand-element-active {
+  background-color: pink;
+  color: white; /*text color*/
+}
 .center_element {
     position:relative;             /* position in the center of the screen */
     left:50%;
