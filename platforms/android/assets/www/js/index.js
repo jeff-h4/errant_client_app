@@ -56,10 +56,10 @@ var app = {
     //    console.log('Leaving receivedEvent()');
     //},
     startErrant: function(id) {
-        var WEB_SERVER_BASE = "http://428c3496.ngrok.io"; 
+        var WEB_SERVER_BASE = "http://100656cb.ngrok.io"; 
         console.log('======================================');
         console.log('Entering startErrant()');
-        React.render(React.createElement(App, {webServerBase: WEB_SERVER_BASE}),document.getElementById("main"));
+        React.render(React.createElement(App, {webServerBase: WEB_SERVER_BASE}),document.getElementById("errantapp"));
         //React.render(React.createElement(Box, null),document.getElementById("reacttesting"));
         console.log('Leaving startErrant()');
         console.log('======================================');

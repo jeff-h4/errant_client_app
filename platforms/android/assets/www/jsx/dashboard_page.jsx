@@ -14,6 +14,7 @@ var DashboardPage = React.createClass({
     };
   },
   componentDidMount: function() {
+    $.mobile.initializePage();
     this.updateErrandsInfo();
   },
   updateErrandsInfo: function() {
@@ -93,10 +94,10 @@ var DashboardPage = React.createClass({
                              }.bind(this));
     if (this.state.displayState === "summary")  {
       return  <div className="section-summary">
-                <div className="dashheader">
+                <div className="dash-header">
                   <h1>Errant Dashboard</h1>
                 </div>
-                <div className="dashmain">
+                <div className="dash-content">
                   <div className="row">
                     <button type="button" className="btn btn-info" onClick={this.processLocalNewErrandClick}>+ New Errand</button>
                   </div>
@@ -120,7 +121,7 @@ var DashboardPage = React.createClass({
                     </div>
                   </div>
                 </div>
-                <div className="dashfooter">
+                <div className="dash-footer">
                 </div>
               </div>;
       //END return 'summary'

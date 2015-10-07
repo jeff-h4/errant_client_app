@@ -27,7 +27,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#ADDE86; /* Light Blue */
+    background-color: darkgray;
     /*background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);       */
     /*
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -55,14 +55,11 @@ div {
 }
 /* Portrait layout (default) */
 .app {
-    position:absolute;             /* position in the center of the screen */
-    text-align:center;
-}
-.page {
+  background-color: black;
+  position:absolute;             /* position in the center of the screen */
   text-align:center;
 }
 .welcome-page {
-  background-color: lightblue;
 }
 .welcome-signin-form {
   position: absolute;
@@ -95,11 +92,8 @@ div {
   background-color: pink;
   color: white; /*text color*/
 }
-.center_element {
-    position:relative;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
+.center-element {
+  margin: auto;    
 }
 h1 {
     font-size:24px;
@@ -120,7 +114,7 @@ h1 {
 }
 /*NOTE from Gabe: Do not specify height/width when using bootstrap for the tiles*/
 .posted-errand-tile {
-    background-color: #33FF00; /*limegreen*/
+    background-color: yellow;
     /*display: inline;*/
     position: relative;
 }
@@ -139,61 +133,7 @@ h1 {
     /*display: inline;*/
     position: relative;
 }
-/* START of DASH Sample */
-.dummy {
-    margin-top: 100%;
-}
-.thumbnail {
-    position: relative;
-    width: 100px;
-    /*height: 100px;*/
-    top: 15px;
-    bottom: 0;
-    left: 15px;
-    right: 0;
-    text-align:center;
-    padding-top:calc(50% - 30px);
-}
-.dashheader {
-  width: 100%;
-  height: 100px;
-  background-color: #E8E8E8;
-  border-radius: 10px;
-  /*clear: both;*/
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
 
-}
-.dashmain {
-  background-color: black;
-  border-radius: 5px;
-  width: 100%;
-  height: 400px;
-  float: left;
-}
-.clear {
-  clear: both;
-}
-.dashfooter {
-  background-color: #E8E8E8;
-  border-radius: 10px;
-  margin-top: 0;
-  width: 100%;
-  height: 100px; 
-  /*clear: both;*/
-}
-/*
-.dashright {
-  background-color: orange;
-  border-radius: 5px;
-  width: 75%;
-  height: 300px;
-  float: left;
-}
-*/
-
-/* END of DASH Sample */
 /*
 .event.listening {
     background-color:#333333;
