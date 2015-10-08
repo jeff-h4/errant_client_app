@@ -16,6 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+var backKeyDown = function() {
+  console.log("Back button pressed");
+  if ($(".welcome-page").size() === 1) {
+    if (confirm("Exit App?")) {
+      navigator.app.exitApp();
+    }
+  } else if ($(".dashboard-summary").size() === 1) {
+  } else if ($(".dashboard-add-errand-form").size() === 1) {
+  } else if ($(".dashboard-posted-errands").size() === 1) {
+  } else if ($(".dashboard-accepted-errands").size() === 1) {
+  } else if ($(".dashboard-unsupported-state").size() === 1) {
+  } else {
+  }
+};
 var app = {
     // Application Constructor
     initialize: function() {
@@ -36,6 +51,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         console.log("EVENT: onDeviceReady received!");
+        document.addEventListener("backbutton", backKeyDown, true);
         //app.receivedEvent('deviceready');
         app.startErrant('deviceready');
     },
