@@ -16,6 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+var backKeyDown = function() {
+  console.log("Back button pressed");
+};
 var app = {
     // Application Constructor
     initialize: function() {
@@ -36,6 +40,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         console.log("EVENT: onDeviceReady received!");
+        document.addEventListener("backbutton", backKeyDown, true);
         //app.receivedEvent('deviceready');
         app.startErrant('deviceready');
     },
