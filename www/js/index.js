@@ -51,7 +51,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         console.log("EVENT: onDeviceReady received!");
-        document.addEventListener("backbutton", backKeyDown, true);
+        //document.addEventListener("backbutton", backKeyDown, true);
         //app.receivedEvent('deviceready');
         app.startErrant('deviceready');
     },
@@ -72,7 +72,7 @@ var app = {
     //    console.log('Leaving receivedEvent()');
     //},
     startErrant: function(id) {
-        var WEB_SERVER_BASE = "http://100656cb.ngrok.io"; 
+        var WEB_SERVER_BASE = "http://cd207f04.ngrok.io"; 
         console.log('======================================');
         console.log('Entering startErrant()');
         React.render(React.createElement(App, {webServerBase: WEB_SERVER_BASE}),document.getElementById("errantapp"));

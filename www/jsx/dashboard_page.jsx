@@ -4,7 +4,21 @@
 // - summary,
 //   displayAddErrandForm, displayPosted, 
 //   displayAccepted, displayCompleted
+//
 var DashboardPage = React.createClass({
+  backKeyDown: function() {
+    console.log("Back Key hit on Dashboard Page");
+    if (this.state.displayState === "summary") {
+      if (confirm("Log Out?")) {
+        this.props.parentSignOut();
+      }
+    } else if ((this.state.displayState === "displayAddErrandForm") ||
+               (this.state.displayState === "displayPosted") || 
+               (this.state.displayState === "displayAccepted") || 
+               (this.state.displayState === "displayCompleted")) {
+      this.setState({displayState: "summary"});
+    }
+  },
   getInitialState: function() {
     return {
       displayState: "summary",
@@ -16,6 +30,10 @@ var DashboardPage = React.createClass({
   componentDidMount: function() {
     $.mobile.initializePage();
     this.updateErrandsInfo();
+    document.addEventListener("backbutton", this.backKeyDown, true);
+  },
+  componentWillUnmount: function() {
+    document.removeEventListener("backbutton", this.backKeyDown, true);
   },
   updateErrandsInfo: function() {
     $.ajax({
@@ -102,9 +120,6 @@ var DashboardPage = React.createClass({
                 </div>
                 <div className="dash-content">
                   <div className="row">
-                    <button type="button" className="btn btn-info" onClick={this.processLocalNewErrandClick}>+ New Errand</button>
-                  </div>
-                  <div className="row">
                     <div className="col-xs-6">
                       <ErrandTile tile_title="Posted" 
                                   errand_count={_.size(this.state.posted_errands)}
@@ -125,6 +140,9 @@ var DashboardPage = React.createClass({
                   </div>
                 </div>
                 <div className="dash-footer">
+                  <div className="row">
+                    <button type="button" className="btn btn-info" onClick={this.processLocalNewErrandClick}>+ New Errand</button>
+                  </div>
                 </div>
               </div>;
       //END return 'summary'

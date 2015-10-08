@@ -1,6 +1,18 @@
 //INPUT PROPS
 //webServerBase - Base URL of web server
 var WelcomePage = React.createClass({
+  backKeyDown: function() {
+    console.log("Welcome Page - Back Button Hit");
+    if (confirm("Exit App?")) {
+      navigator.app.exitApp();
+    } 
+  },
+  componentDidMount: function() {
+    document.addEventListener("backbutton", this.backKeyDown, true);
+  },
+  componentWillUnmount: function() {
+    document.removeEventListener("backbutton", this.backKeyDown, true);
+  },
   render: function() {
     return <div className="welcome-page">
             <div className="page-header">

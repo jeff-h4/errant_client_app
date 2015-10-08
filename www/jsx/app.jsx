@@ -14,6 +14,11 @@ var App = React.createClass({
       appState: "signedIn"
     });
   },
+  transitionUserSignedOut: function() {
+    this.setState({
+      appState: "notSignedIn"
+    });
+  },
   render: function() {
     var windowHeight  = $(window).innerHeight();
     var windowWidth   = $(window).innerWidth();
@@ -27,7 +32,8 @@ var App = React.createClass({
                           pageCallback={this.transitionUserSignedIn}/>;
     } else if (this.state.appState === "signedIn") {
       console.log("App: Entering State - signedIn");
-      page = <DashboardPage webServerBase={this.props.webServerBase}/>;
+      page = <DashboardPage webServerBase={this.props.webServerBase}
+                            parentSignOut={this.transitionUserSignedOut}/>;
     } else {
       console.log("App: UNKNOWN STATE ENTERED!");
     }
