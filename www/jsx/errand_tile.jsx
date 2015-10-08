@@ -13,7 +13,7 @@ var ErrandTile = React.createClass({
     //I want to make it so that when it's clicked, call a function. Maybe I do this in the dashboard?
     return  <div> 
               <a href="#" onClick={this.processClick}>
-                <div className="tile tile-medium tile-teal">
+                <div className={"tile tile-medium " + this.props.tile_color}>
                   <p><strong>{this.props.tile_title}</strong></p>
                   <p><span className="badge">{this.props.errand_count}</span></p>
                 </div>

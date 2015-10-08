@@ -27,14 +27,15 @@ var ErrandItem = React.createClass({
         this.setState({interactionState: "displayBrief"});
       }
     },
-    execAction: function(action) {
-      console.log("Errand said to do " + action);
+    execAction: function(errandId,action) {
+      console.log("Errand " + errandId + " said to do " + action);
       $.ajax({
         method: "PATCH",
-        url: this.props.webServerBase + "/errands/ " + this.props.id,
+        url: this.props.webServerBase + "/errands/ " + errandId,
         data: {errand: {aasm_state: action}},
         success: function() {
           console.log("ErrandItem execAction: Updated state to " + action);
+          $("#errand-item-" + errandId).addClass("hide");
         },
         error: function() {
           console.log("ErrandItem execAction: There was an error performing " + action);
@@ -42,8 +43,9 @@ var ErrandItem = React.createClass({
       });
     },
     render: function() {
+    var myErrandItemId = "errand-item-" + this.props.id;
     if (this.state.interactionState === "displayBrief") {
-      return  <div className="errand-element panel-body">
+      return  <div id={myErrandItemId} className="errand-element panel-body">
                 <a href="#" onClick={this.toggleDisplayState}>
                     <table>
                       <tr>
@@ -54,14 +56,14 @@ var ErrandItem = React.createClass({
                         <td>${this.props.price}</td>
                       </tr>
                       <tr>
-                        <td>Owner</td>
-                        <td colspan="2">{this.props.store}</td>
+                        <td>{this.props.owner_first_name}</td>
+                        <td coSspan="2">{this.props.store}</td>
                       </tr>
                     </table>
                 </a>
               </div>;
     } else {
-      return  <div className="errand-element-active well panel-body">
+      return  <div id={myErrandItemId} className="errand-element-active well panel-body">
                 <a href="#" onClick={this.toggleDisplayState}>
                     <table>
                       <tr>
@@ -72,12 +74,12 @@ var ErrandItem = React.createClass({
                         <td>${this.props.price}</td>
                       </tr>
                       <tr>
-                        <td>Owner</td>
-                        <td colspan="2">{this.props.store}</td>
+                        <td>{this.props.owner_first_name}</td>
+                        <td colSpan="2">{this.props.store}</td>
                       </tr>
                     </table>
                 </a>
-                <ErrandActionButtons errandState={this.props.aasm_state} parentCallback={this.execAction}/>
+                <ErrandActionButtons buttonId={this.props.id} errandState={this.props.aasm_state} parentCallback={this.execAction}/>
               </div>;
  
     }

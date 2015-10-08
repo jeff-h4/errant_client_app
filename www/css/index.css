@@ -55,6 +55,7 @@ div {
 .app {
   position:absolute;             /* position in the center of the screen */
   text-align:center;
+  margin-left: -10px;
 }
 .welcome-page {
 }
@@ -79,6 +80,9 @@ div {
 .errand-element {
 }
 .errand-element-active {
+}
+.hide {
+  display: none;
 }
 .center-element {
   margin: auto;    
@@ -193,4 +197,23 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
 }

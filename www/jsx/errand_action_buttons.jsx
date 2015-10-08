@@ -5,10 +5,12 @@
 // this.props.parentCallback(action)
 var ErrandActionButtons = React.createClass({
   acceptErrand: function() {
-    this.props.parentCallback("accepted");
+    this.props.parentCallback(this.props.buttonId,"accepted");
   },
   completeErrand: function() {
-    this.props.parentCallback("completed");
+    this.props.parentCallback(this.props.buttonId,"completed");
+  },
+  processButtonClick: function() {
   },
   render: function() {
     if (this.props.errandState === "posted") {
@@ -17,7 +19,7 @@ var ErrandActionButtons = React.createClass({
               </div>;
     } else if (this.props.errandState === "accepted") {
       return  <div>
-                <button type="button" className="btn btn-info" onClick={this.acceptErrand}>Complete</button>
+                <button type="button" className="btn btn-success" onClick={this.completeErrand}>Complete</button>
               </div>;
     } else if (this.props.errandState === "completed") {
       return  <div></div>;
