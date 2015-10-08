@@ -96,7 +96,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
                                                    );
                              }.bind(this));
     if (this.state.displayState === "summary")  {
-      return  React.createElement("div", {className: "section-summary"}, 
+      return  React.createElement("div", {className: "dashboard-summary"}, 
                 React.createElement("div", {className: "page-header dash-header"}, 
                   React.createElement("h1", null, "Errant Dashboard")
                 ), 
@@ -129,7 +129,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
               );
       //END return 'summary'
     } else if (this.state.displayState === "displayAddErrandForm") {
-      return  React.createElement("div", {className: "section-add-errand-form"}, 
+      return  React.createElement("div", {className: "dashboard-add-errand-form"}, 
                 React.createElement(AddErrandForm, {webServerBase: this.props.webServerBase, 
                                parentCallback: this.processChildAddErrandFormCallback})
               );
@@ -146,7 +146,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
               );
       //END return 'displayPosted'
     } else if (this.state.displayState === "displayAccepted") {
-      return  React.createElement("div", {className: "section-accepted-errands"}, 
+      return  React.createElement("div", {className: "dashboard-accepted-errands"}, 
                 React.createElement("div", {className: "dash-header page-header"}, 
                   React.createElement("h1", null, "Accepted Errands")
                 ), 
@@ -158,7 +158,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
               );
       //END return 'displayAccepted'
      } else if (this.state.displayState === "displayCompleted") {
-      return  React.createElement("div", {className: "section-completed-errands"}, 
+      return  React.createElement("div", {className: "dashboard-completed-errands"}, 
                 React.createElement("div", {className: "dash-header page-header"}, 
                   React.createElement("h1", null, "Completed Errands")
                 ), 
@@ -170,7 +170,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
               );
       //END return 'displayCompleted' 
     } else {
-      return  React.createElement("div", null, 
+      return  React.createElement("div", {className: "dashboard-unsupported-state"}, 
                 React.createElement("p", null, "Dashboard_Page entered unsupported state ", this.state.displayState)
               );
       //END return 'Unsupported State'

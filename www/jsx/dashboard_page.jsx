@@ -96,7 +96,7 @@ var DashboardPage = React.createClass({
                                                    />;
                              }.bind(this));
     if (this.state.displayState === "summary")  {
-      return  <div className="section-summary">
+      return  <div className="dashboard-summary">
                 <div className="page-header dash-header">
                   <h1>Errant Dashboard</h1>
                 </div>
@@ -129,7 +129,7 @@ var DashboardPage = React.createClass({
               </div>;
       //END return 'summary'
     } else if (this.state.displayState === "displayAddErrandForm") {
-      return  <div className="section-add-errand-form">
+      return  <div className="dashboard-add-errand-form">
                 <AddErrandForm webServerBase={this.props.webServerBase}
                                parentCallback={this.processChildAddErrandFormCallback} />
               </div>;
@@ -146,7 +146,7 @@ var DashboardPage = React.createClass({
               </div>;
       //END return 'displayPosted'
     } else if (this.state.displayState === "displayAccepted") {
-      return  <div className="section-accepted-errands">
+      return  <div className="dashboard-accepted-errands">
                 <div className="dash-header page-header">
                   <h1>Accepted Errands</h1>
                 </div>
@@ -158,7 +158,7 @@ var DashboardPage = React.createClass({
               </div>;
       //END return 'displayAccepted'
      } else if (this.state.displayState === "displayCompleted") {
-      return  <div className="section-completed-errands">
+      return  <div className="dashboard-completed-errands">
                 <div className="dash-header page-header">
                   <h1>Completed Errands</h1>
                 </div>
@@ -170,7 +170,7 @@ var DashboardPage = React.createClass({
               </div>;
       //END return 'displayCompleted' 
     } else {
-      return  <div>
+      return  <div className="dashboard-unsupported-state">
                 <p>Dashboard_Page entered unsupported state {this.state.displayState}</p>
               </div>;
       //END return 'Unsupported State'
