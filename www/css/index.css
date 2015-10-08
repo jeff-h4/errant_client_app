@@ -45,7 +45,6 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 div {
@@ -78,10 +77,8 @@ div {
 .section-completed-errands {
 }
 .errand-element {
-  color: white; /*text color*/
 }
 .errand-element-active {
-  color: white; /*text color*/
 }
 .center-element {
   margin: auto;    
@@ -102,6 +99,10 @@ h1 {
     font-size:12px;
     margin:0px 30px;
     padding:2px 0px;
+}
+.tile-medium {
+  height: 125px;
+  width: 125px;
 }
 /*NOTE from Gabe: Do not specify height/width when using bootstrap for the tiles*/
 .posted-errand-tile {

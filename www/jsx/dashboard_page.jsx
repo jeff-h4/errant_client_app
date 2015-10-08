@@ -16,6 +16,7 @@ var DashboardPage = React.createClass({
                (this.state.displayState === "displayPosted") || 
                (this.state.displayState === "displayAccepted") || 
                (this.state.displayState === "displayCompleted")) {
+      this.updateErrandsInfo();
       this.setState({displayState: "summary"});
     }
   },

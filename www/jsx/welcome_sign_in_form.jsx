@@ -38,7 +38,7 @@ var WelcomeSignInForm = React.createClass({
                     <label htmlFor="signin-password">Password:</label>
                     <input className="form-control" type="password" id="signin-password" />
                   </div>
-                  <input className="btn btn-primary" type="submit"/>
+                  <input className="btn btn-lg btn-primary" type="submit"/>
                 </form> 
               </div>
             </div>;

@@ -20,6 +20,9 @@ var WelcomePage = React.createClass({
             </div>
             <WelcomeSignInForm webServerBase={this.props.webServerBase}
                                    callback={this.props.pageCallback}/>
+            <div className="center-element">
+              <img src="img/logo.png" />
+            </div>
            </div>;
   }
 });

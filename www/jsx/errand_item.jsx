@@ -48,11 +48,14 @@ var ErrandItem = React.createClass({
                     <table>
                       <tr>
                         <td rowSpan="2"><img src="img/cat.png" className="errand-user-profile-img" /></td>
-                        <td colSpan="2">{this.props.item_name}</td>
+                        <td colSpan="2"><strong>{this.props.item_name}</strong></td>
                       </tr>
                       <tr>
-                        <td>{this.props.store}</td>
                         <td>${this.props.price}</td>
+                      </tr>
+                      <tr>
+                        <td>Owner</td>
+                        <td colspan="2">{this.props.store}</td>
                       </tr>
                     </table>
                 </a>
@@ -60,20 +63,19 @@ var ErrandItem = React.createClass({
     } else {
       return  <div className="errand-element-active well panel-body">
                 <a href="#" onClick={this.toggleDisplayState}>
-                  <table>
-                    <tr>
-                      <td rowSpan="2"><img src="img/cat.png" className="errand-user-profile-img" /></td>
-                      <td colSpan="2">{this.props.item_name}</td>
-                    </tr>
-                    <tr>
-                      <td>{this.props.store}</td>
-                      <td>${this.props.price}</td>
-                    </tr>
-                    <tr>
-                      <td>Owner: {this.props.owner}</td>
-                      <td>Runner: {this.props.runner}</td>
-                    </tr>
-                  </table>
+                    <table>
+                      <tr>
+                        <td rowSpan="2"><img src="img/cat.png" className="errand-user-profile-img" /></td>
+                        <td colSpan="2"><strong>{this.props.item_name}</strong></td>
+                      </tr>
+                      <tr>
+                        <td>${this.props.price}</td>
+                      </tr>
+                      <tr>
+                        <td>Owner</td>
+                        <td colspan="2">{this.props.store}</td>
+                      </tr>
+                    </table>
                 </a>
                 <ErrandActionButtons errandState={this.props.aasm_state} parentCallback={this.execAction}/>
               </div>;

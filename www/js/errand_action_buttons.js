@@ -7,11 +7,20 @@ var ErrandActionButtons = React.createClass({displayName: "ErrandActionButtons",
   acceptErrand: function() {
     this.props.parentCallback("accepted");
   },
+  completeErrand: function() {
+    this.props.parentCallback("completed");
+  },
   render: function() {
     if (this.props.errandState === "posted") {
       return  React.createElement("div", null, 
                 React.createElement("button", {type: "button", className: "btn btn-info", onClick: this.acceptErrand}, "Accept")
               );
+    } else if (this.props.errandState === "accepted") {
+      return  React.createElement("div", null, 
+                React.createElement("button", {type: "button", className: "btn btn-info", onClick: this.acceptErrand}, "Complete")
+              );
+    } else if (this.props.errandState === "completed") {
+      return  React.createElement("div", null);
     } else {
       return  React.createElement("div", null, 
                 React.createElement("p", null, "State ", this.props.errandState, " is not supported by ErrandActionButtons")

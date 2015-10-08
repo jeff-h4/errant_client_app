@@ -14,7 +14,8 @@ var ErrandTile = React.createClass({displayName: "ErrandTile",
     return  React.createElement("div", null, 
               React.createElement("a", {href: "#", onClick: this.processClick}, 
                 React.createElement("div", {className: "tile tile-medium tile-teal"}, 
-                  React.createElement("h4", null, this.props.tile_title, " ", React.createElement("span", {className: "badge"}, this.props.errand_count))
+                  React.createElement("p", null, React.createElement("strong", null, this.props.tile_title)), 
+                  React.createElement("p", null, React.createElement("span", {className: "badge"}, this.props.errand_count))
                 )
               )
             );

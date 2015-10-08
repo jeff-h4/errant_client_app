@@ -19,7 +19,10 @@ var WelcomePage = React.createClass({displayName: "WelcomePage",
               React.createElement("h1", {className: "center-element"}, "Welcome to Errant")
             ), 
             React.createElement(WelcomeSignInForm, {webServerBase: this.props.webServerBase, 
-                                   callback: this.props.pageCallback})
+                                   callback: this.props.pageCallback}), 
+            React.createElement("div", {className: "center-element"}, 
+              React.createElement("img", {src: "img/logo.png"})
+            )
            );
   }
 });

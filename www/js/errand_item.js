@@ -48,11 +48,14 @@ var ErrandItem = React.createClass({displayName: "ErrandItem",
                     React.createElement("table", null, 
                       React.createElement("tr", null, 
                         React.createElement("td", {rowSpan: "2"}, React.createElement("img", {src: "img/cat.png", className: "errand-user-profile-img"})), 
-                        React.createElement("td", {colSpan: "2"}, this.props.item_name)
+                        React.createElement("td", {colSpan: "2"}, React.createElement("strong", null, this.props.item_name))
                       ), 
                       React.createElement("tr", null, 
-                        React.createElement("td", null, this.props.store), 
                         React.createElement("td", null, "$", this.props.price)
+                      ), 
+                      React.createElement("tr", null, 
+                        React.createElement("td", null, "Owner"), 
+                        React.createElement("td", {colspan: "2"}, this.props.store)
                       )
                     )
                 )
@@ -60,20 +63,19 @@ var ErrandItem = React.createClass({displayName: "ErrandItem",
     } else {
       return  React.createElement("div", {className: "errand-element-active well panel-body"}, 
                 React.createElement("a", {href: "#", onClick: this.toggleDisplayState}, 
-                  React.createElement("table", null, 
-                    React.createElement("tr", null, 
-                      React.createElement("td", {rowSpan: "2"}, React.createElement("img", {src: "img/cat.png", className: "errand-user-profile-img"})), 
-                      React.createElement("td", {colSpan: "2"}, this.props.item_name)
-                    ), 
-                    React.createElement("tr", null, 
-                      React.createElement("td", null, this.props.store), 
-                      React.createElement("td", null, "$", this.props.price)
-                    ), 
-                    React.createElement("tr", null, 
-                      React.createElement("td", null, "Owner: ", this.props.owner), 
-                      React.createElement("td", null, "Runner: ", this.props.runner)
+                    React.createElement("table", null, 
+                      React.createElement("tr", null, 
+                        React.createElement("td", {rowSpan: "2"}, React.createElement("img", {src: "img/cat.png", className: "errand-user-profile-img"})), 
+                        React.createElement("td", {colSpan: "2"}, React.createElement("strong", null, this.props.item_name))
+                      ), 
+                      React.createElement("tr", null, 
+                        React.createElement("td", null, "$", this.props.price)
+                      ), 
+                      React.createElement("tr", null, 
+                        React.createElement("td", null, "Owner"), 
+                        React.createElement("td", {colspan: "2"}, this.props.store)
+                      )
                     )
-                  )
                 ), 
                 React.createElement(ErrandActionButtons, {errandState: this.props.aasm_state, parentCallback: this.execAction})
               );

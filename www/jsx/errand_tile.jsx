@@ -14,7 +14,8 @@ var ErrandTile = React.createClass({
     return  <div> 
               <a href="#" onClick={this.processClick}>
                 <div className="tile tile-medium tile-teal">
-                  <h4>{this.props.tile_title} <span className="badge">{this.props.errand_count}</span></h4>
+                  <p><strong>{this.props.tile_title}</strong></p>
+                  <p><span className="badge">{this.props.errand_count}</span></p>
                 </div>
               </a>
             </div>;

@@ -38,7 +38,7 @@ var WelcomeSignInForm = React.createClass({displayName: "WelcomeSignInForm",
                     React.createElement("label", {htmlFor: "signin-password"}, "Password:"), 
                     React.createElement("input", {className: "form-control", type: "password", id: "signin-password"})
                   ), 
-                  React.createElement("input", {className: "btn btn-primary", type: "submit"})
+                  React.createElement("input", {className: "btn btn-lg btn-primary", type: "submit"})
                 )
               )
             );
