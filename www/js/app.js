@@ -22,13 +22,11 @@ var App = React.createClass({displayName: "App",
     var page = React.createElement("div", null, "Page not Initialized");
     if (this.state.appState === "notSignedIn") {
       console.log("App: Entering State - notSignedIn");
-      page = React.createElement(WelcomePage, {className: "page col-xs-12", 
-                          webServerBase: this.props.webServerBase, 
+      page = React.createElement(WelcomePage, {webServerBase: this.props.webServerBase, 
                           pageCallback: this.transitionUserSignedIn});
     } else if (this.state.appState === "signedIn") {
       console.log("App: Entering State - signedIn");
-      page = React.createElement(DashboardPage, {className: "page col-xs-12", 
-                            webServerBase: this.props.webServerBase});
+      page = React.createElement(DashboardPage, {webServerBase: this.props.webServerBase});
     } else {
       console.log("App: UNKNOWN STATE ENTERED!");
     }

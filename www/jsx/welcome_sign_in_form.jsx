@@ -27,7 +27,7 @@ var WelcomeSignInForm = React.createClass({
     });
   },
   render: function() {
-    return  <div className="row welcome-signin-form">
+    return  <div className="row welcome-signin-form center-element">
               <div className="col-xs-12">
                 <form onSubmit={this.submitButtonClicked}>
                   <div className="form-group">

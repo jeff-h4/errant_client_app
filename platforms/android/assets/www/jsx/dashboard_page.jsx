@@ -14,6 +14,7 @@ var DashboardPage = React.createClass({
     };
   },
   componentDidMount: function() {
+    $.mobile.initializePage();
     this.updateErrandsInfo();
   },
   updateErrandsInfo: function() {
@@ -62,6 +63,7 @@ var DashboardPage = React.createClass({
                                 return <ErrandItem id={oneErrand.id}
                                                    owner={oneErrand.owner}
                                                    title={oneErrand.title}
+                                                   item_name={oneErrand.item_name}
                                                    runner={oneErrand.runner}
                                                    price={oneErrand.price}
                                                    store={oneErrand.store}
@@ -71,32 +73,34 @@ var DashboardPage = React.createClass({
                              }.bind(this));
     var accepted_errand_tags = this.state.accepted_errands.map(function(oneErrand) {
                                 return <ErrandItem id={oneErrand.id}
-                                                 owner={oneErrand.owner}
-                                                 title={oneErrand.title}
-                                                 runner={oneErrand.runner}
-                                                 price={oneErrand.price}
-                                                 store={oneErrand.store}
-                                                 aasm_state={oneErrand.aasm_state}
-                                                 webServerBase={this.props.webServerBase}
-                                                 />;
+                                                   owner={oneErrand.owner}
+                                                   title={oneErrand.title}
+                                                   item_name={oneErrand.item_name}
+                                                   runner={oneErrand.runner}
+                                                   price={oneErrand.price}
+                                                   store={oneErrand.store}
+                                                   aasm_state={oneErrand.aasm_state}
+                                                   webServerBase={this.props.webServerBase}
+                                                   />;
                              }.bind(this));
     var completed_errand_tags = this.state.completed_errands.map(function(oneErrand) {
                                 return <ErrandItem id={oneErrand.id}
-                                                 owner={oneErrand.owner}
-                                                 title={oneErrand.title}
-                                                 runner={oneErrand.runner}
-                                                 price={oneErrand.price}
-                                                 store={oneErrand.store}
-                                                 aasm_state={oneErrand.aasm_state}
-                                                 webServerBase={this.props.webServerBase}
-                                                 />;
+                                                   owner={oneErrand.owner}
+                                                   title={oneErrand.title}
+                                                   item_name={oneErrand.item_name}
+                                                   runner={oneErrand.runner}
+                                                   price={oneErrand.price}
+                                                   store={oneErrand.store}
+                                                   aasm_state={oneErrand.aasm_state}
+                                                   webServerBase={this.props.webServerBase}
+                                                   />;
                              }.bind(this));
     if (this.state.displayState === "summary")  {
-      return  <div className="section-summary">
-                <div className="dashheader">
+      return  <div className="dashboard-summary">
+                <div className="page-header dash-header">
                   <h1>Errant Dashboard</h1>
                 </div>
-                <div className="dashmain">
+                <div className="dash-content">
                   <div className="row">
                     <button type="button" className="btn btn-info" onClick={this.processLocalNewErrandClick}>+ New Errand</button>
                   </div>
@@ -120,53 +124,53 @@ var DashboardPage = React.createClass({
                     </div>
                   </div>
                 </div>
-                <div className="dashfooter">
+                <div className="dash-footer">
                 </div>
               </div>;
       //END return 'summary'
     } else if (this.state.displayState === "displayAddErrandForm") {
-      return  <div className="section-add-errand-form">
+      return  <div className="dashboard-add-errand-form">
                 <AddErrandForm webServerBase={this.props.webServerBase}
                                parentCallback={this.processChildAddErrandFormCallback} />
               </div>;
     } else if (this.state.displayState === "displayPosted") {
       return  <div className="section-posted-errands">
-                <div className="dashheader">
+                <div className="page-header dash-header">
                   <h1>Posted Errands</h1>
                 </div>
-                <div className="dashmain">
+                <div className="panel panel-default">
                   {posted_errand_tags}
                 </div>
-                <div className="dashfooter">
+                <div className="dash-footer">
                 </div>
               </div>;
       //END return 'displayPosted'
     } else if (this.state.displayState === "displayAccepted") {
-      return  <div className="section-accepted-errands">
-                <div className="dashheader">
+      return  <div className="dashboard-accepted-errands">
+                <div className="dash-header page-header">
                   <h1>Accepted Errands</h1>
                 </div>
-                <div className="dashmain">
+                <div className="panel panel-default dash-main">
                   {accepted_errand_tags}
                 </div>
-                <div className="dashfooter">
+                <div className="dash-footer">
                 </div>
               </div>;
       //END return 'displayAccepted'
      } else if (this.state.displayState === "displayCompleted") {
-      return  <div className="section-completed-errands">
-                <div className="dashheader">
+      return  <div className="dashboard-completed-errands">
+                <div className="dash-header page-header">
                   <h1>Completed Errands</h1>
                 </div>
-                <div className="dashmain">
+                <div className="dash-main panel panel-default">
                   {completed_errand_tags}
                 </div>
-                <div className="dashfooter">
+                <div className="dash-footer">
                 </div>
               </div>;
       //END return 'displayCompleted' 
     } else {
-      return  <div>
+      return  <div className="dashboard-unsupported-state">
                 <p>Dashboard_Page entered unsupported state {this.state.displayState}</p>
               </div>;
       //END return 'Unsupported State'

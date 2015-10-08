@@ -43,28 +43,39 @@ var ErrandItem = React.createClass({
     },
     render: function() {
     if (this.state.interactionState === "displayBrief") {
-      return  <div className="errand-element">
+      return  <div className="errand-element panel-body">
                 <a href="#" onClick={this.toggleDisplayState}>
-                  <div>
-                    <p>Errand {this.props.id}</p>
-                    <p>{this.props.owner} | {this.props.runner} | {this.props.title}</p>
-                    <p>{this.props.stores} | ${this.props.price}</p>
-                  </div>
+                    <table>
+                      <tr>
+                        <td rowSpan="2"><img src="img/cat.png" className="errand-user-profile-img" /></td>
+                        <td colSpan="2">{this.props.item_name}</td>
+                      </tr>
+                      <tr>
+                        <td>{this.props.store}</td>
+                        <td>${this.props.price}</td>
+                      </tr>
+                    </table>
                 </a>
               </div>;
     } else {
-      return  <div className="errand-element-active">
+      return  <div className="errand-element-active well panel-body">
                 <a href="#" onClick={this.toggleDisplayState}>
-                  <div>
-                    <p>Errand {this.props.id}: {this.props.title}</p>
-                    <p>Status: {this.props.aasm_state}</p>
-                    <p>Owner: {this.props.owner}</p>
-                    <p>Runner: {this.props.runner}</p>
-                    <p>${this.props.price}</p>
-                    <p>{this.props.store}</p>
-                    <ErrandActionButtons errandState={this.props.aasm_state} parentCallback={this.execAction}/>
-                  </div>
+                  <table>
+                    <tr>
+                      <td rowSpan="2"><img src="img/cat.png" className="errand-user-profile-img" /></td>
+                      <td colSpan="2">{this.props.item_name}</td>
+                    </tr>
+                    <tr>
+                      <td>{this.props.store}</td>
+                      <td>${this.props.price}</td>
+                    </tr>
+                    <tr>
+                      <td>Owner: {this.props.owner}</td>
+                      <td>Runner: {this.props.runner}</td>
+                    </tr>
+                  </table>
                 </a>
+                <ErrandActionButtons errandState={this.props.aasm_state} parentCallback={this.execAction}/>
               </div>;
  
     }

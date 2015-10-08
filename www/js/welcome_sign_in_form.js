@@ -27,7 +27,7 @@ var WelcomeSignInForm = React.createClass({displayName: "WelcomeSignInForm",
     });
   },
   render: function() {
-    return  React.createElement("div", {className: "row welcome-signin-form"}, 
+    return  React.createElement("div", {className: "row welcome-signin-form center-element"}, 
               React.createElement("div", {className: "col-xs-12"}, 
                 React.createElement("form", {onSubmit: this.submitButtonClicked}, 
                   React.createElement("div", {className: "form-group"}, 
