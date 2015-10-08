@@ -41,28 +41,33 @@ var AddErrandForm = React.createClass({displayName: "AddErrandForm",
   },
   render: function() {
   //I want to make it so that when it's clicked, call a function. Maybe I do this in the dashboard?
-  return  React.createElement("div", {className: "row"}, 
-           React.createElement("div", {className: "col-xs-12"}, 
-             React.createElement("form", {onSubmit: this.submitButtonClicked}, 
-               React.createElement("div", {className: "form-group"}, 
-                   React.createElement("label", {htmlFor: "errand-title"}, "Title:"), 
-                   React.createElement("input", {className: "form-control", type: "text", id: "errand-title"})
-               ), 
-               React.createElement("div", {className: "form-group"}, 
-                   React.createElement("label", {htmlFor: "errand-item"}, "Item:"), 
-                   React.createElement("input", {className: "form-control", type: "text", id: "errand-item"})
-               ), 
-               React.createElement("div", {className: "form-group"}, 
-                 React.createElement("label", {htmlFor: "errand-price"}, "Price:"), 
-                 React.createElement("input", {className: "form-control", type: "text", id: "errand-price"})
-               ), 
-               React.createElement("div", {className: "form-group"}, 
-                 React.createElement("label", {htmlFor: "errand-store"}, "Store:"), 
-                 React.createElement("input", {className: "form-control", type: "text", id: "errand-store"})
-               ), 
-               React.createElement("input", {className: "btn btn-primary", type: "submit"})
-             )
-           )
-         );
+  return  React.createElement("div", null, 
+            React.createElement("div", {className: "page-header"}, 
+              React.createElement("h1", null, "Add a New Errand")
+            ), 
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-xs-12"}, 
+                React.createElement("form", {onSubmit: this.submitButtonClicked}, 
+                  React.createElement("div", {className: "form-group"}, 
+                      React.createElement("label", {htmlFor: "errand-title"}, "Title:"), 
+                      React.createElement("input", {className: "form-control", type: "text", id: "errand-title"})
+                  ), 
+                  React.createElement("div", {className: "form-group"}, 
+                      React.createElement("label", {htmlFor: "errand-item"}, "Item:"), 
+                      React.createElement("input", {className: "form-control", type: "text", id: "errand-item"})
+                  ), 
+                  React.createElement("div", {className: "form-group"}, 
+                    React.createElement("label", {htmlFor: "errand-price"}, "Price:"), 
+                    React.createElement("input", {className: "form-control", type: "text", id: "errand-price"})
+                  ), 
+                  React.createElement("div", {className: "form-group"}, 
+                    React.createElement("label", {htmlFor: "errand-store"}, "Store:"), 
+                    React.createElement("input", {className: "form-control", type: "text", id: "errand-store"})
+                  ), 
+                  React.createElement("input", {className: "btn btn-primary", type: "submit"})
+                )
+              )
+            )
+          );
   }
 });

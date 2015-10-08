@@ -41,28 +41,33 @@ var AddErrandForm = React.createClass({
   },
   render: function() {
   //I want to make it so that when it's clicked, call a function. Maybe I do this in the dashboard?
-  return  <div className="row">
-           <div className="col-xs-12">
-             <form onSubmit={this.submitButtonClicked}>
-               <div className="form-group">
-                   <label htmlFor="errand-title">Title:</label>
-                   <input className="form-control" type="text" id="errand-title" />
-               </div>
-               <div className="form-group">
-                   <label htmlFor="errand-item">Item:</label>
-                   <input className="form-control" type="text" id="errand-item" />
-               </div>
-               <div className="form-group">
-                 <label htmlFor="errand-price">Price:</label>
-                 <input className="form-control" type="text" id="errand-price" />
-               </div>
-               <div className="form-group">
-                 <label htmlFor="errand-store">Store:</label>
-                 <input className="form-control" type="text" id="errand-store" />
-               </div>
-               <input className="btn btn-primary" type="submit"/>
-             </form> 
-           </div>
-         </div>;
+  return  <div> 
+            <div className="page-header">
+              <h1>Add a New Errand</h1>
+            </div>
+            <div className="row">
+              <div className="col-xs-12">
+                <form onSubmit={this.submitButtonClicked}>
+                  <div className="form-group">
+                      <label htmlFor="errand-title">Title:</label>
+                      <input className="form-control" type="text" id="errand-title" />
+                  </div>
+                  <div className="form-group">
+                      <label htmlFor="errand-item">Item:</label>
+                      <input className="form-control" type="text" id="errand-item" />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="errand-price">Price:</label>
+                    <input className="form-control" type="text" id="errand-price" />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="errand-store">Store:</label>
+                    <input className="form-control" type="text" id="errand-store" />
+                  </div>
+                  <input className="btn btn-primary" type="submit"/>
+                </form> 
+              </div>
+            </div>
+          </div>;
   }
 });

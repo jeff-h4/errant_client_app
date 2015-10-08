@@ -105,19 +105,19 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
                     React.createElement("button", {type: "button", className: "btn btn-info", onClick: this.processLocalNewErrandClick}, "+ New Errand")
                   ), 
                   React.createElement("div", {className: "row"}, 
-                    React.createElement("div", {className: "col-xs-5 col-xs-offset-1 thumbnail posted-errand-tile"}, 
+                    React.createElement("div", {className: "col-xs-6"}, 
                       React.createElement(ErrandTile, {tile_title: "Posted", 
                                   errand_count: _.size(this.state.posted_errands), 
                                   parentCallback: this.processErrandTileClick})
                     ), 
-                    React.createElement("div", {className: "col-xs-5 thumbnail accepted-errand-tile"}, 
+                    React.createElement("div", {className: "col-xs-6"}, 
                       React.createElement(ErrandTile, {tile_title: "Accepted", 
                                   errand_count: _.size(this.state.accepted_errands), 
                                   parentCallback: this.processErrandTileClick})
                     )
                   ), 
                   React.createElement("div", {className: "row"}, 
-                    React.createElement("div", {className: "col-xs-5 thumbnail completed-errand-tile"}, 
+                    React.createElement("div", {className: "col-xs-6"}, 
                       React.createElement(ErrandTile, {tile_title: "Completed", 
                                   errand_count: _.size(this.state.completed_errands), 
                                   parentCallback: this.processErrandTileClick})

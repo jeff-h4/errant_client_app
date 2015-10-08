@@ -60,7 +60,6 @@ div {
 .welcome-page {
 }
 .welcome-signin-form {
-  position: absolute;
   top: 100px;
   text-align: center;
 }
@@ -150,10 +149,8 @@ h1 {
   margin-bottom: 0;
 }
 .dash-content {
-  border: yellow;
-  width: 100%;
-  height: 400px;
-  float: left;
+  margin: auto;
+  text-align: center;
 }
 .clear {
   clear: both;
