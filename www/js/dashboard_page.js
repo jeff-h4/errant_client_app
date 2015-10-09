@@ -68,6 +68,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
   processChildAddErrandFormCallback: function() {
     console.log("DashboardPage AddErrand was successful");
     this.setState({displayState: "summary"});
+    $.mobile.initializePage();
     this.updateErrandsInfo();
   },
   //Caller: Child

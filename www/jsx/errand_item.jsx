@@ -44,12 +44,20 @@ var ErrandItem = React.createClass({
     },
     render: function() {
     var myErrandItemId = "errand-item-" + this.props.id;
+    var avatar = "img/cat.png";
+    if (this.props.owner_first_name === "Jeff") {
+      avatar = "img/jeff.jpg";
+    } else if (this.props.owner_first_name === "Tam") {
+      avatar = "img/tam.jpg";
+    } else if (this.props.owner_first_name === "Mehdi") {
+      avatar = "img/mehdi.jpg";
+    }
     if (this.state.interactionState === "displayBrief") {
       return  <div id={myErrandItemId} className="errand-element panel-body">
                 <a href="#" onClick={this.toggleDisplayState}>
                     <table>
                       <tr>
-                        <td rowSpan="2"><img src="img/cat.png" className="errand-user-profile-img" /></td>
+                        <td rowSpan="2"><img src={avatar} className="errand-user-profile-img" /></td>
                         <td colSpan="2"><strong>{this.props.item_name}</strong></td>
                       </tr>
                       <tr>
@@ -67,7 +75,7 @@ var ErrandItem = React.createClass({
                 <a href="#" onClick={this.toggleDisplayState}>
                     <table>
                       <tr>
-                        <td rowSpan="2"><img src="img/cat.png" className="errand-user-profile-img" /></td>
+                        <td rowSpan="2"><img src={avatar} className="errand-user-profile-img" /></td>
                         <td colSpan="2"><strong>{this.props.item_name}</strong></td>
                       </tr>
                       <tr>

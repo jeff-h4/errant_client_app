@@ -44,12 +44,20 @@ var ErrandItem = React.createClass({displayName: "ErrandItem",
     },
     render: function() {
     var myErrandItemId = "errand-item-" + this.props.id;
+    var avatar = "img/cat.png";
+    if (this.props.owner_first_name === "Jeff") {
+      avatar = "img/jeff.jpg";
+    } else if (this.props.owner_first_name === "Tam") {
+      avatar = "img/tam.jpg";
+    } else if (this.props.owner_first_name === "Mehdi") {
+      avatar = "img/mehdi.jpg";
+    }
     if (this.state.interactionState === "displayBrief") {
       return  React.createElement("div", {id: myErrandItemId, className: "errand-element panel-body"}, 
                 React.createElement("a", {href: "#", onClick: this.toggleDisplayState}, 
                     React.createElement("table", null, 
                       React.createElement("tr", null, 
-                        React.createElement("td", {rowSpan: "2"}, React.createElement("img", {src: "img/cat.png", className: "errand-user-profile-img"})), 
+                        React.createElement("td", {rowSpan: "2"}, React.createElement("img", {src: avatar, className: "errand-user-profile-img"})), 
                         React.createElement("td", {colSpan: "2"}, React.createElement("strong", null, this.props.item_name))
                       ), 
                       React.createElement("tr", null, 
@@ -67,7 +75,7 @@ var ErrandItem = React.createClass({displayName: "ErrandItem",
                 React.createElement("a", {href: "#", onClick: this.toggleDisplayState}, 
                     React.createElement("table", null, 
                       React.createElement("tr", null, 
-                        React.createElement("td", {rowSpan: "2"}, React.createElement("img", {src: "img/cat.png", className: "errand-user-profile-img"})), 
+                        React.createElement("td", {rowSpan: "2"}, React.createElement("img", {src: avatar, className: "errand-user-profile-img"})), 
                         React.createElement("td", {colSpan: "2"}, React.createElement("strong", null, this.props.item_name))
                       ), 
                       React.createElement("tr", null, 

@@ -34,6 +34,8 @@ var AddErrandForm = React.createClass({displayName: "AddErrandForm",
         } else {
           console.log("AddErrandForm: POST Failed");
           console.log(data);
+          $.mobile.initializePage();
+          alert("The form input was invalid");
         }
       }.bind(this)
     });

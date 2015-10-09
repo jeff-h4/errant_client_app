@@ -22,6 +22,8 @@ var WelcomeSignInForm = React.createClass({displayName: "WelcomeSignInForm",
         } else {
           console.log("Sign In Failure");
           console.log(data);
+          $.mobile.initializePage();
+          alert("Login Failure. Try again.");
         }
       }.bind(this)
     });
