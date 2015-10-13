@@ -62,6 +62,20 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
       }.bind(this)
     });
   },
+  updateErrandState: function(errandId,new_state) {
+    $.ajax({
+      method: "PATCH",
+      url: this.props.webServerBase + "/errands/" + errandId,
+      data: {errand: {aasm_state: new_state}},
+      success: function(data) {
+        if (data.result === "success") {
+        } else {
+          console.log("DashboardPage updateErrandState(): Ajax Error");
+          console.log(data);
+        }
+      }.bind(this)
+    });
+  },
   processLocalNewErrandClick: function() {
     this.setState({displayState: "displayAddErrandForm"});
   },
@@ -97,6 +111,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
                                                    price: oneErrand.price, 
                                                    store: oneErrand.store, 
                                                    aasm_state: oneErrand.aasm_state, 
+                                                   parentCallback: this.updateErrandState, 
                                                    webServerBase: this.props.webServerBase}
                                                    );
                              }.bind(this));
@@ -111,6 +126,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
                                                    price: oneErrand.price, 
                                                    store: oneErrand.store, 
                                                    aasm_state: oneErrand.aasm_state, 
+                                                   parentCallback: this.updateErrandState, 
                                                    webServerBase: this.props.webServerBase}
                                                    );
                              }.bind(this));
@@ -139,6 +155,7 @@ var DashboardPage = React.createClass({displayName: "DashboardPage",
                                                    price: oneErrand.price, 
                                                    store: oneErrand.store, 
                                                    aasm_state: oneErrand.aasm_state, 
+                                                   parentCallback: this.updateErrandState, 
                                                    webServerBase: this.props.webServerBase}
                                                    );
                              }.bind(this));
